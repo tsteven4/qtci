@@ -1,28 +1,7 @@
 language : cpp
-env:
-  - DISPLAY=:99.0
-compiler:
-  - gcc
-before_install:
-    - cat /etc/apt/sources.list
-    - sudo apt-get update
-    - sudo apt-get install --force-yes -qq p7zip openjdk-7-jdk ant lib32z1-dev lib32stdc++6  #lib32* are needed by Android SDK
-    - sudo update-alternatives --display java
-    - sudo update-alternatives --set java /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
-    - sh -e /etc/init.d/xvfb start
+os: linux
+dist: trusty
+sudo: required
+compiler: gcc
 script:
-    - ENV_FILE=qt-5.9.5-android-19.env
-    - export WORKDIR=$PWD
-    - echo $PWD
-    - source path.env
-    - wget -c https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
-    - extract-qt-installer --list-packages qt-unified-linux-x64-online.run
-    - install-qt-5.9.5-android-19
-    - cat $ENV_FILE
-    - source $ENV_FILE
-    - which qmake
-    - git clone https://github.com/benlau/quickandroid.git
-    - cd quickandroid/examples/quickandroidexample
-    - qmake
-    - make install INSTALL_ROOT=$WORKDIR/build
-    - androiddeployqt --output $WORKDIR/build
+    - QT_CI_PACKAGES=qt.qt5.597.gcc_64,qt.qt5.597.qtwebengine PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.7
