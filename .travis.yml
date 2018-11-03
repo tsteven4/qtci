@@ -31,18 +31,28 @@ matrix:
         - make install INSTALL_ROOT=$WORKDIR/build
         - androiddeployqt --output $WORKDIR/build
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.0
+    - QT_CI_PACKAGES=qt.qt5.590.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.0
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.1
+    - QT_CI_PACKAGES=qt.qt5.591.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.1
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.2
+    - QT_CI_PACKAGES=qt.qt5.592.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.2
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.3
+    - QT_CI_PACKAGES=qt.qt5.593.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.3
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.4
+    - QT_CI_PACKAGES=qt.qt5.594.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.4
   - script:
-    - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.5
+    - QT_CI_PACKAGES=qt.qt5.595.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.5
   - script:
     - QT_CI_PACKAGES=qt.qt5.596.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.6
   - script:
     - QT_CI_PACKAGES=qt.qt5.597.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.7
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5100.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.10.0
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5101.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.10.1
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5110.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.11.0
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5111.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.11.1
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5112.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.11.2
