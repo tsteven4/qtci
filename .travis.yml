@@ -31,6 +31,16 @@ matrix:
         - make install INSTALL_ROOT=$WORKDIR/build
         - androiddeployqt --output $WORKDIR/build
   - script:
+    - QT_CI_PACKAGES=qt.qt5.560.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.0
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.561.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.1
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5611.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.1-1
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.562.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.2
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.563.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.3
+  - script:
     - QT_CI_PACKAGES=qt.qt5.590.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.0
   - script:
     - QT_CI_PACKAGES=qt.qt5.591.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.9.1
