@@ -14,12 +14,10 @@ INSTALLER=`basename $DOWNLOAD_URL`
 INSTALLER_NAME=${INSTALLER%.*}
 ENVFILE=${QT_TARGET_CATALOG}/qt-${QT_VERSION}.env
 APPFILE=/Volumes/${INSTALLER_NAME}/${INSTALLER_NAME}.app/Contents/MacOS/${INSTALLER_NAME}
-echo $INSTALLER_NAME
-echo $APPFILE
 
 echo Downloading Qt
 ${QT_CI_DOWNLOADER} $DOWNLOAD_URL
-hdiutil attach ${INSTALLER} -noverify
+hdiutil attach ${INSTALLER}
 ls /Volumes
 echo Installing Qt
 extract-qt-installer $APPFILE ${QT_TARGET_CATALOG}/Qt
