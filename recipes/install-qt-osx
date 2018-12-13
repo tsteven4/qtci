@@ -18,19 +18,9 @@ APPFILE=/Volumes/${INSTALLER_NAME}/${INSTALLER_NAME}.app/Contents/MacOS/${INSTAL
 echo Downloading Qt
 ${QT_CI_DOWNLOADER} $DOWNLOAD_URL
 hdiutil attach ${INSTALLER} -noverify -plist
-ls /Volumes
 echo Installing Qt
 extract-qt-installer $APPFILE ${QT_TARGET_CATALOG}/Qt
-# occasionally extract-qt-installer seems to return a bit early.
-# and we get hdiutil: couldn't unmount "disk1" - Resource busy
-#hdiutil detach /Volumes/${INSTALLER_NAME}
-count=0
-until hdiutil detach /Volumes/${INSTALLER_NAME} || [ $count -ge 5 ]
-do
-  echo "Wait and attempt to detach again"
-  count=`expr $count + 1`
-  sleep 5
-done
+hdiutil detach /Volumes/${INSTALLER_NAME}
 
 echo Create $ENVFILE
 cat << EOF > $ENVFILE
