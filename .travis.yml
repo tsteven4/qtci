@@ -28,6 +28,9 @@ matrix:
         - qmake
         - make install INSTALL_ROOT=$WORKDIR/build
         - androiddeployqt --output $WORKDIR/build
+  - os: osx
+    script: 
+      - QT_CI_PACKAGES=qt.qt5.597.clang_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt-osx 5.9.7; cat Qt/components.xml; cat Qt/InstallationLog.txt; find Qt -maxdepth 3; source qt-5.9.7.env; qmake -version
   - script:
     - QT_CI_PACKAGES=qt.56.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.6.0; find Qt -name qmake; source qt-5.6.0.env; qmake -version
   - script:
