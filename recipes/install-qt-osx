@@ -23,8 +23,6 @@ hdiutil attach ${INSTALLER} -noverify
 ls /Volumes
 echo Installing Qt
 extract-qt-installer $APPFILE ${QT_TARGET_CATALOG}/Qt
-# we don't seem to be done when extract-qt-installer returns causing detatch to fail.
-sleep 60
 hdiutil detach /Volumes/${INSTALLER_NAME}
 
 echo Create $ENVFILE
