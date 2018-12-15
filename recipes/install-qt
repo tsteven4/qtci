@@ -1,4 +1,4 @@
-#!/bin/bash -ev
+#!/bin/bash -e
 # Reference:
 #   https://github.com/musescore/MuseScore/blob/master/build/travis/job_macos/install.sh
 
