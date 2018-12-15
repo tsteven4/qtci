@@ -37,7 +37,7 @@ echo Create ${ENVFILE}
 if [ -d "${QT_TARGET_CATALOG}/Qt/${QT_VERSION}/${COMPILER}/bin" ]; then
   echo "export PATH=${QT_TARGET_CATALOG}/Qt/${QT_VERSION}/${COMPILER}/bin:$PATH" > ${ENVFILE}
 elif [ -d "${QT_TARGET_CATALOG}/Qt/$(echo ${QT_VERSION} | cut -d "." -f -2)/${COMPILER}/bin" ]; then
-  // some packages use an abbreviated version x.y in the path instead of x.y.z
+  # some packages use an abbreviated version x.y in the path instead of x.y.z
   echo "export PATH=${QT_TARGET_CATALOG}/Qt/$(echo ${QT_VERSION} | cut -d "." -f -2)/${COMPILER}/bin:$PATH" > ${ENVFILE}
 fi
 
