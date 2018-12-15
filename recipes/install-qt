@@ -30,7 +30,7 @@ if [ "$(uname)" = "Darwin" ]; then
   extract-qt-installer $APPFILE ${QT_TARGET_CATALOG}/Qt
   hdiutil detach /Volumes/${INSTALLER_NAME}
 elif [ "$(uname)" = "Linux" ]; then
-  extract-qt-installer ${PWD}/${INSTALLER} ${QT_target_catalog}/Qt
+  extract-qt-installer ${PWD}/${INSTALLER} ${QT_TARGET_CATALOG}/Qt
 fi
 
 echo Create $ENVFILE
