@@ -72,3 +72,5 @@ matrix:
     - QT_CI_PACKAGES=qt.qt5.5123.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.12.3 && source qt-5.12.3.env && qmake -version && test "$(qmake -query QT_VERSION)" = "5.12.3"
   - script:
     - QT_CI_PACKAGES=qt.qt5.5124.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.12.4 && source qt-5.12.4.env && qmake -version && test "$(qmake -query QT_VERSION)" = "5.12.4"
+  - script:
+    - QT_CI_PACKAGES=qt.qt5.5125.gcc_64 PATH=${TRAVIS_BUILD_DIR}/recipes:${TRAVIS_BUILD_DIR}/bin:${PATH} install-qt 5.12.5 && source qt-5.12.5.env && qmake -version && test "$(qmake -query QT_VERSION)" = "5.12.5"
