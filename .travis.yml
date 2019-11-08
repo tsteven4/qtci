@@ -31,7 +31,7 @@ matrix:
   - os: windows
     language: shell
     install:
-      wget -c -N https://download.qt.io/archive/qt/5.12/5.12.5/qt-opensource-windows-x86-5.12.5.exe
+      wget -nv -c https://download.qt.io/archive/qt/5.12/5.12.5/qt-opensource-windows-x86-5.12.5.exe
     script:
       qt-opensource-windows-x86-5.12.5.exe --verbose --script bin/qt-install.qs QTCI_OUTPUT=$(PWD)/Qt QTCI_PACKAGES=qt.qt5.5125.win32_msvc2017 && $(PWD)/Qt/5.12.5/msvc2017/bin/qmake -version && test "$(qmake -query QT_VERSION)" = "5.12.5"
   - os: osx
