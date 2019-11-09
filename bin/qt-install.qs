@@ -237,6 +237,14 @@ Controller.prototype.FinishedPageCallback = function() {
     tryFinish();
 }
 
+// Telemetry disabled 
+Controller.prototype.DynamicTelemetryPluginFormCallback = function()
+{
+    var page = gui.pageWidgetByObjectName("DynamicTelemetryPluginForm");
+    page.statisticGroupBox.disableStatisticRadioButton.setChecked(true);
+    gui.clickButton(buttons.NextButton);
+}
+
 // On windows installs there is a page about the start menu.
 Controller.prototype.StartMenuDirectoryPageCallback = function() {
     log("StartMenuDirectoryPageCallback");
