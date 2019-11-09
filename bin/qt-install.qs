@@ -215,6 +215,7 @@ Controller.prototype.FinishedPageCallback = function() {
 // Telemetry disabled 
 Controller.prototype.DynamicTelemetryPluginFormCallback = function()
 {
+    log("TelemetryPluginFormCallback");
     var page = gui.pageWidgetByObjectName("DynamicTelemetryPluginForm");
     page.statisticGroupBox.disableStatisticRadioButton.setChecked(true);
     gui.clickButton(buttons.NextButton);
