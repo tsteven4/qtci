@@ -10,6 +10,7 @@ function abortInstaller() {
     installer.setDefaultPageVisible(QInstaller.StartMenuSelection, false);
     installer.setDefaultPageVisible(QInstaller.PerformInstallation, false);
     installer.setDefaultPageVisible(QInstaller.LicenseCheck, false);
+    installer.setDefaultPageVisible(gui.pageWidgetByObjectName("DynamicTelemetryPluginForm"), false);
     installer.setDefaultPageVisible(QInstaller.StartMenuDirectory, false);
 
     var abortText = "<font color='red' size=3>" + qsTr("Installation failed:") + "</font>";
